@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-deep:      #080b12;
+  --bg-base:      #0d1117;
+  --bg-raised:    #131920;
+  --bg-elevated:  #1a2230;
+  --bg-hover:     #1f2a3a;
+  --border:       #1e2d3d;
+  --border-light: #253445;
+  --text-primary: #e8edf5;
+  --text-secondary:#8a9bb0;
+  --text-muted:   #4a5a6e;
+  --green:        #00e676;
+  --green-dim:    #00c85a;
+  --green-bg:     rgba(0,230,118,0.07);
+  --green-border: rgba(0,230,118,0.2);
+  --red:          #ff4757;
+  --red-bg:       rgba(255,71,87,0.07);
+  --red-border:   rgba(255,71,87,0.2);
+  --amber:        #ffb020;
+  --amber-bg:     rgba(255,176,32,0.07);
+  --amber-border: rgba(255,176,32,0.2);
+  --blue:         #4d9fff;
+  --blue-bg:      rgba(77,159,255,0.07);
+  --blue-border:  rgba(77,159,255,0.2);
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+  --radius-sm:    4px;
+  --radius:       8px;
+  --radius-lg:    12px;
+  --shadow:       0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:    0 8px 32px rgba(0,0,0,0.6);
+  --glow-green:   0 0 24px rgba(0,230,118,0.12);
+}
+
+html, body { height:100%; background:var(--bg-deep); color:var(--text-primary); font-family:var(--font-body); font-size:14px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+#root { height:100%; }
+::-webkit-scrollbar { width:6px; height:6px; }
+::-webkit-scrollbar-track { background:var(--bg-base); }
+::-webkit-scrollbar-thumb { background:var(--border-light); border-radius:3px; }
+
+input, select, textarea {
+  font-family:var(--font-body); font-size:14px; color:var(--text-primary);
+  background:var(--bg-raised); border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:10px 12px; width:100%; outline:none; transition:border-color 0.2s, box-shadow 0.2s;
+}
+input::placeholder, textarea::placeholder { color:var(--text-muted); }
+input:focus, select:focus, textarea:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(0,230,118,0.1); }
+label { display:block; font-size:12px; font-weight:500; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px; }
+
+.btn { display:inline-flex; align-items:center; gap:8px; padding:10px 18px; font-family:var(--font-body); font-size:14px; font-weight:600; border-radius:var(--radius-sm); border:none; cursor:pointer; transition:all 0.15s ease; text-decoration:none; white-space:nowrap; }
+.btn-primary { background:var(--green); color:#000; }
+.btn-primary:hover { background:var(--green-dim); box-shadow:var(--glow-green); transform:translateY(-1px); }
+.btn-ghost { background:transparent; color:var(--text-secondary); border:1px solid var(--border); }
+.btn-ghost:hover { background:var(--bg-hover); color:var(--text-primary); border-color:var(--border-light); }
+.btn-danger { background:var(--red-bg); color:var(--red); border:1px solid var(--red-border); }
+.btn-danger:hover { background:var(--red); color:#fff; }
+.btn-full { width:100%; justify-content:center; }
+
+.card { background:var(--bg-raised); border:1px solid var(--border); border-radius:var(--radius); padding:24px; }
+.card:hover { border-color:var(--border-light); }
+
+.section-title { font-family:var(--font-display); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:16px; }
+.number-display { font-family:var(--font-mono); font-weight:600; }
+.page { padding:32px; animation:fadeIn 0.3s ease both; }
+.page-header { margin-bottom:32px; }
+.page-title { font-family:var(--font-display); font-size:26px; font-weight:800; color:var(--text-primary); line-height:1.2; }
+.page-subtitle { font-size:14px; color:var(--text-secondary); margin-top:4px; }
+
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+.grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+@media(max-width:1200px){.grid-4{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.page{padding:20px}}
+
+.badge { display:inline-flex; align-items:center; gap:4px; padding:3px 8px; border-radius:20px; font-size:11px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; }
+.badge-green { background:var(--green-bg); color:var(--green); border:1px solid var(--green-border); }
+.badge-red   { background:var(--red-bg);   color:var(--red);   border:1px solid var(--red-border); }
+.badge-amber { background:var(--amber-bg); color:var(--amber); border:1px solid var(--amber-border); }
+
+.alert-strip { display:flex; align-items:flex-start; gap:10px; padding:12px 16px; border-radius:var(--radius-sm); font-size:13px; line-height:1.5; }
+.alert-strip.warning { background:var(--amber-bg); border:1px solid var(--amber-border); color:var(--amber); }
+.alert-strip.danger  { background:var(--red-bg);   border:1px solid var(--red-border);   color:var(--red); }
+.alert-strip.info    { background:var(--blue-bg);  border:1px solid var(--blue-border);   color:var(--blue); }
+
+.empty-state { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 20px; text-align:center; color:var(--text-muted); gap:12px; }
+.empty-state svg { opacity:0.3; }
+.empty-state h3 { font-family:var(--font-display); font-size:18px; font-weight:700; color:var(--text-secondary); }
+.empty-state p { font-size:14px; max-width:280px; line-height:1.6; }
+.divider { height:1px; background:var(--border); margin:20px 0; }
+
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeInLeft { from{opacity:0;transform:translateX(-12px)} to{opacity:1;transform:translateX(0)} }
+@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.3} }
