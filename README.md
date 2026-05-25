@@ -1,4 +1,4 @@
-# ProfitGuard – Frontend React
+# CaixaClaro – Frontend React
 
 > Plataforma SaaS para análise de lucro e margem por produto/serviço.
 
